@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "lpm-structure-learning"
+version = "0.0.1"
+description = ""
+authors = ["Schaechtle <u.schaechtle@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+packages = [{include = "lpm_structure_learning", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.13"
+jupyter = "^1.1.1"
+polars = "^1.7.1"
+pytest = "^8.3.3"
+# GitHub dependencies
+genspn = {git = "git@github.com:Joaoloula/GenSPN.git", branch="mixed_categoricals"}
+lpm-plot = {git = "https://github.com/schaechtle/lpm_plot.git", branch = "schaechtle/minor-bug-fixes"}
+lpm-fidelity = {git = "https://github.com/neeshjaa/lpm_fidelity.git", branch = "dev"}
+lpm-query = {git = "git@github.com:schaechtle/lpm_query.git", branch = "main"}
+
+[[tool.poetry.source]]
+name = "gcp"
+url = "https://us-west1-python.pkg.dev/probcomp-caliban/probcomp/simple/"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
